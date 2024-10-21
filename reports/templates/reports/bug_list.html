@@ -1,0 +1,10 @@
+{% extends "base_generic.html" %}
+{% block content %}
+<h2>Bug Reports</h2>
+<ul>
+    {% for bug in bugs %}
+    <li><a href="{% url 'bug_detail' bug.pk %}">{{ bug.title }}</a> - {{ bug.status }}</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'new_bug' %}">Report New Bug</a>
+{% endblock %}
